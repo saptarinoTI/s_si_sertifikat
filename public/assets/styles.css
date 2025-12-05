@@ -1,0 +1,123 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animasi fade */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animasi slide dari kanan */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animasi slide dari kiri */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Class untuk animasi */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease-in-out;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.5s ease-in-out;
+}
+
+.shadow__element {
+    box-shadow: 0 10px 79px rgba(0, 0, 0, 0.05);
+}
+
+/* FILAMENT */
+.fi-sc.fi-sc-has-gap.fi-grid.fi-section-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1%;
+}
+
+.fi-sc.fi-sc-has-gap.fi-grid.fi-section-content .fi-grid-col {
+    width: 49%;
+}
+
+.fi-fo-field-label-content {
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+}
+
+.fi-fo-field-label-required-mark {
+    color: #9c1414;
+}
+
+.fi-input-wrp-content-ctn .fi-input,
+textarea,
+.fi-input-wrp-content-ctn .fi-select-input {
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 4px;
+    padding: 6px 8px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.fi-input-wrp-content-ctn .fi-select-input option {
+    color: #1f1f1f;
+}
+
+form button {
+    background-color: #fff;
+    padding: 6px 28px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #8c99dd;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+form button.btn-status {
+    background-color: #8c99dd;
+    margin-top: 20px;
+    padding: 8px 28px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+    cursor: pointer;
+}

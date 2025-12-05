@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'tailwindcss';
+
+/* Required by all components */
+@import '../../vendor/filament/support/resources/css/index.css';
+
+/* Required by actions and tables */
+@import '../../vendor/filament/actions/resources/css/index.css';
+
+/* Required by actions, forms and tables */
+@import '../../vendor/filament/forms/resources/css/index.css';
+
+/* Required by actions and infolists */
+@import '../../vendor/filament/infolists/resources/css/index.css';
+
+/* Required by notifications */
+@import '../../vendor/filament/notifications/resources/css/index.css';
+
+/* Required by actions, infolists, forms, schemas and tables */
+@import '../../vendor/filament/schemas/resources/css/index.css';
+
+/* Required by tables */
+@import '../../vendor/filament/tables/resources/css/index.css';
+
+/* Required by widgets */
+@import '../../vendor/filament/widgets/resources/css/index.css';
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    body {
+        font-family: 'Poppins';
+    }
+
+    form button {
+        margin-top: 10px;
+        background-color: #fff;
+        padding: 8px 28px;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #8c99dd;
+        letter-spacing: 0.2px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+}
+
+@layer components {
+    .text-logo {
+        font-family: 'Montserrat';
+    }
+
+    .container {
+        @apply mx-auto px-6;
+    }
+
+    .fi-section {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .fi-sc.fi-sc-has-gap.fi-grid.fi-section-content {
+        padding: 20px 0 !important;
+    }
+
+    .fi-fo-field-label-content {
+        color: #fff !important;
+    }
+}
