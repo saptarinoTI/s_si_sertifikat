@@ -17,4 +17,10 @@
       [x-cloak] {
           display: none !important;
       }
+      
+      .btn-status {
+        background: #5E6AAD;
+        color: #ffffff;
+        margin-top: 15px;
+      }
   </style>

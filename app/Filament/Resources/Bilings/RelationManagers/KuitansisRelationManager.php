@@ -44,7 +44,7 @@ class KuitansisRelationManager extends RelationManager
                 TextColumn::make("satker")->label("Satker/ Wilker"),
                 TextColumn::make("jumlah")->label("Jumlah (Rp.)")->money("idr"),
             ])
-            ->headerActions([CreateAction::make()->label("Daftar Kuitansi")])
+            ->headerActions([CreateAction::make()->label("Tambah Data")])
             ->recordActions([EditAction::make(), DeleteAction::make()]);
     }
 }

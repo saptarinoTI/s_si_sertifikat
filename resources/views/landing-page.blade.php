@@ -108,10 +108,6 @@
 
     </main>
 
-    <footer class="text-center py-4 bg-teal-900">
-        <p class="text-white font-medium">Copyright © {{ date('Y') }} {{ config('app.name') }}</p>
-    </footer>
-
     {{-- Back to top --}}
     <button id="backToTop"
         class="hidden fixed bottom-5 right-5 px-5 py-3 font-bold rounded-lg bg-slate-300 text-slate-950 shadow-lg hover:bg-slate-400 transition-all duration-300"

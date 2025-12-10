@@ -24,7 +24,7 @@ class PermohonanResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentPlus;
 
     protected static ?string $modelLabel = 'Permohonan';
-    protected static ?string $pluralModelLabel = 'Data Permohonan';
+    protected static ?string $pluralModelLabel = 'Permohonan';
     protected static string|UnitEnum|null $navigationGroup = 'Master Data';
     protected static ?string $slug = 'permohonan';
     protected static ?int $navigationSort = 1;

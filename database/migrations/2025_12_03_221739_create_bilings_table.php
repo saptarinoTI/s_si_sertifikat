@@ -19,6 +19,10 @@ return new class extends Migration {
             $table->date("tanggal_kadaluarsa");
             $table->enum("status", ["pending", "paid", "expired"]);
             $table->date("tanggal_bayar")->nullable();
+            $table->string("ntb")->nullable();
+            $table->string("ntpn")->nullable();
+            $table->string("bank")->nullable();
+            $table->string("channel_bayar")->nullable();
             $table->string("bukti_pembayaran")->nullable();
             $table->timestamps();
         });

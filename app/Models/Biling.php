@@ -15,6 +15,10 @@ class Biling extends Model
         "tanggal_kadaluarsa",
         "status",
         "tanggal_bayar",
+        "ntb",
+        "ntpn",
+        "bank",
+        "channel_bayar",
         "bukti_pembayaran",
     ];
 

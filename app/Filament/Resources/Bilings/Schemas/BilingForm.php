@@ -8,7 +8,6 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
-use Illuminate\Support\Str;
 
 class BilingForm
 {
@@ -18,7 +17,7 @@ class BilingForm
             ->components([
                 TextInput::make('kode_biling')
                     ->default(fn () => rand(10000000000, 99999999999)) // 8 digit numeric
-                    ->readOnly() 
+                    ->readOnly()
                     ->required()
                     ->columnSpanFull(),
                 Select::make('pik_id')
@@ -36,6 +35,17 @@ class BilingForm
                     ->options(['pending' => 'Pending', 'paid' => 'Paid', 'expired' => 'Expired'])
                     ->required(),
                 DatePicker::make('tanggal_bayar'),
+                TextInput::make('ntp')
+                    ->label('NTB')
+                    ->nullable(),
+                TextInput::make('ntpn')
+                    ->label('NTPN')
+                    ->nullable(),
+                TextInput::make('bank')
+                    ->nullable(),
+                TextInput::make('channel_bayar')
+                    ->label('Channel Bayar')
+                    ->nullable(),
                 FileUpload::make('bukti_pembayaran')
                     ->columnSpanFull(),
             ]);

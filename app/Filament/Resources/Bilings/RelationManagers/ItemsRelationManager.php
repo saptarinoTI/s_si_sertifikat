@@ -2,18 +2,19 @@
 
 namespace App\Filament\Resources\Bilings\RelationManagers;
 
-use App\Filament\Resources\Bilings\BilingResource;
 use Filament\Actions\CreateAction;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Forms;
-use Filament\Schemas\Schema;
 
 class ItemsRelationManager extends RelationManager
 {
     protected static string $relationship = 'items';
+
     protected static ?string $title = 'Detail Kuitansi';
 
     public function form(Schema $schema): Schema
@@ -21,10 +22,10 @@ class ItemsRelationManager extends RelationManager
         return $schema
             ->components([
                 TextInput::make('uraian')->required(),
-                TextInput::make('volume')->numeric()->required(),
-                TextInput::make('tarif')->numeric()->required(),
-                TextInput::make('tarif')->numeric()->required(),
-                TextInput::make('tarif')->numeric()->required(),
+                TextInput::make('volume')->required(),
+                TextInput::make('tarif')->required(),
+                TextInput::make('satuan')->required(),
+                TextInput::make('jumlah')->required(),
             ]);
     }
 
@@ -33,12 +34,20 @@ class ItemsRelationManager extends RelationManager
         return $table
             ->columns([
                 TextColumn::make('uraian'),
-                TextColumn::make('volume'),
-                TextColumn::make('tarif')->money('idr'),
-                TextColumn::make('jumlah')->money('idr'),
+                TextColumn::make('volume')
+                    ->label('Volume x frek.'),
+                TextColumn::make('tarif')
+                    ->money('idr')
+                    ->label('Tarif'),
+                TextColumn::make('satuan'),
+                TextColumn::make('jumlah')
+                    ->money('idr')
+                    ->label('Jumlah'),
             ])
             ->headerActions([
-                CreateAction::make(),
-            ]);
+                CreateAction::make()->label('Tambah Data'),
+            ])
+            ->recordActions([EditAction::make(), DeleteAction::make()]);
+
     }
 }

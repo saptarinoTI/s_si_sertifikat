@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Bilings;
 use App\Filament\Resources\Bilings\Pages\CreateBiling;
 use App\Filament\Resources\Bilings\Pages\EditBiling;
 use App\Filament\Resources\Bilings\Pages\ListBilings;
+use App\Filament\Resources\Bilings\Pages\ViewBiling;
 use App\Filament\Resources\Bilings\RelationManagers\ItemsRelationManager;
 use App\Filament\Resources\Bilings\RelationManagers\KuitansisRelationManager;
 use App\Filament\Resources\Bilings\Schemas\BilingForm;
@@ -21,8 +22,8 @@ class BilingResource extends Resource
 {
     protected static ?string $model = Biling::class;
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBanknotes;
-    protected static ?string $modelLabel = "Data Biling";
-    protected static ?string $pluralModelLabel = "Data Biling";
+    protected static ?string $modelLabel = "Billing";
+    protected static ?string $pluralModelLabel = "Billing";
     protected static string|UnitEnum|null $navigationGroup = "Master Data";
     protected static ?string $slug = "biling";
     protected static ?int $navigationSort = 2;
@@ -47,6 +48,7 @@ class BilingResource extends Resource
         return [
             "index" => ListBilings::route("/"),
             "create" => CreateBiling::route("/create"),
+            "view" => ViewBiling::route("/{record}"),
             "edit" => EditBiling::route("/{record}/edit"),
         ];
     }
